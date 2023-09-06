@@ -82,7 +82,7 @@ public static void selectionSort(int[] arr) {
 배열을 정렬된 부분과 정렬되지 않은 부분으로 나누고, 정렬되지 않은 부분의 원소를 정렬된 부분에 삽입하는 알고리즘입니다.
 시간 복잡도: O(n^2)
 
-```
+```java
 public static void insertionSort(int[] arr) {
     int n = arr.length;
     for (int i = 1; i < n; i++) {
@@ -106,6 +106,8 @@ public static void insertionSort(int[] arr) {
 주어진 배열에서 원하는 값을 찾는 가장 기본적인 탐색 알고리즘입니다.
 시간 복잡도: O(n)
 
+<img src="https://kwonsoonwoo.github.io/assets/cs50/%EC%84%A0%ED%98%95%ED%83%90%EC%83%89%EC%98%88%EC%8B%9C.png"  width="50%" title="탐색"/>
+
 ```java
 public static int linearSearch(int[] arr, int target) {
     for (int i = 0; i < arr.length; i++) {
@@ -119,6 +121,8 @@ public static int linearSearch(int[] arr, int target) {
 ### 이진 탐색 (Binary Search):
 정렬된 배열에서 원하는 값을 빠르게 찾는 알고리즘입니다.
 시간 복잡도: O(log n)
+
+<img src="https://thebook.io/img/006950/327.jpg" width="80%" title="이진탐색"/>
 
 ```java
 public static int binarySearch(int[] arr, int target) {
@@ -140,6 +144,8 @@ public static int binarySearch(int[] arr, int target) {
     return -1; // 원하는 값이 발견되지 않으면 -1 반환
 }
 ```
+
+<img src="https://images.velog.io/images/dgk089/post/4831dacc-e64a-43b0-88a5-4ed2f633a70f/%EC%BA%A1%EC%B2%98.PNG"  width="50%" title="탐색"/>
 
 ## 그래프 알고리즘
 
