@@ -24,7 +24,7 @@
 
 <img src="https://www.swtestacademy.com/wp-content/uploads/2021/11/bubble-sort-2.png" width="50%" title="버블정렬"/>
 
-```
+```java
 public static void bubbleSort(int[] arr) {
     int n = arr.length;
     boolean swapped;
@@ -49,7 +49,7 @@ public static void bubbleSort(int[] arr) {
 
 <img src="https://www.swtestacademy.com/wp-content/uploads/2021/11/selection-sort-Selection-Sort-1.drawio-1.png" width="50%" title="버블정렬"/>
 
-```
+```java
 public static void selectionSort(int[] arr) {
     int n = arr.length;
     for (int i = 0; i < n - 1; i++) {
@@ -95,7 +95,7 @@ public static void insertionSort(int[] arr) {
 주어진 배열에서 원하는 값을 찾는 가장 기본적인 탐색 알고리즘입니다.
 시간 복잡도: O(n)
 
-```
+```java
 public static int linearSearch(int[] arr, int target) {
     for (int i = 0; i < arr.length; i++) {
         if (arr[i] == target) {
@@ -109,7 +109,7 @@ public static int linearSearch(int[] arr, int target) {
 정렬된 배열에서 원하는 값을 빠르게 찾는 알고리즘입니다.
 시간 복잡도: O(log n)
 
-```
+```java
 public static int binarySearch(int[] arr, int target) {
     int left = 0;
     int right = arr.length - 1;
@@ -136,7 +136,7 @@ public static int binarySearch(int[] arr, int target) {
 최단 경로 알고리즘: 다익스트라 알고리즘은 단일 출발지에서 모든 노드까지의 최단 경로를 찾습니다.
 그래프 탐색: 깊이 우선 탐색 (DFS)와 너비 우선 탐색 (BFS)을 그래프에서 어떻게 활용하는지 설명합니다.
 
-```
+```java
 import java.util.*;
 
 class Graph {
@@ -197,7 +197,7 @@ class Graph {
 }
 ```
 
-```
+```java
 public class GraphExample {
     public static void main(String[] args) {
         Graph graph = new Graph(6);
