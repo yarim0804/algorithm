@@ -104,8 +104,70 @@ public static void insertionSort(int[] arr) {
 }
 ```
 
+### 퀵 정렬(Quick Sort)
+퀵 소트는 분할 정복 기법을 통해 데이터를 정렬하는 알고리즘
+단, 불안정한 정렬(정렬 이후 데이터의 순서가 정렬 이전 원래 순서와 같음을 보장하지 못하는 정렬 알고리즘)
+시간 복잡도: O(nlogn)
 
+(1) 주어진 배열에서 임의의 한 원소를 고르고, 이를 피벗(Pivot) 이라 칭한다. (배열 한 가운데, 맨 앞 원소 등) <br/>
+(2) 피벗을 기준으로 피벗보다 값이 작은 원소들을 모두 모아놓은 배열 하나와, 피벗보다 값이 큰 원소들을 싸그리 모아놓은 배열 하나 → 이렇게 배열을 둘로 나눈다. 분할을 마친 뒤 피벗은 그 자리에서 더이상 움직이지 않는다. <br/>
+(3) 분할된 두 개의 배열에 대해 위 1, 2 과정을 재귀적으로 반복한다.<br/>
 
+단, 정렬이 되어 있는 경우 최악의 시나리오가 될 수 있음 (시간 복잡도 : O(n^2))
+
+<img src="https://static.podo-dev.com/blogs/images/2019/07/10/origin/PAPKSS181224235509.PNG" width="70%" title="퀵 정렬"/>
+
+```java
+public class QuickSort {
+
+  public static void main(String[] args) {
+    int[] arr = { 3, 1, 5, 6, 20, 10, 7, 11, 15, 9 };
+    quickSort(arr);
+  }
+
+  public static void quickSort(int[] arr) {
+    quickSort(arr, 0, arr.length - 1);
+  }
+
+  private static void quickSort(int[] arr, int start, int end) {
+    // start가 end보다 크거나 같다면 정렬할 원소가 1개 이하이므로 정렬하지 않고 return
+    if (start >= end)
+      return;
+    
+    // 가장 왼쪽의 값을 pivot으로 지정, 실제 비교 검사는 start+1 부터 시작
+    int pivot = start;
+    int lo = start + 1;
+    int hi = end;
+    
+    // lo는 현재 부분배열의 왼쪽, hi는 오른쪽을 의미
+    // 서로 엇갈리게 될 경우 while문 종료
+    while (lo <= hi) {
+      while (lo <= end && arr[lo] <= arr[pivot]) // 피벗보다 큰 값을 만날 때까지
+        lo++;
+      while (hi > start && arr[hi] >= arr[pivot]) // 피벗보다 작은 값을 만날 때까지
+        hi--;
+      if (lo > hi)				 // 엇갈리면 피벗과 교체
+        swap(arr, hi, pivot);
+      else
+        swap(arr, lo, hi);			 // 엇갈리지 않으면 lo, hi 값 교체 
+      }
+	
+    // 엇갈렸을 경우, 
+    // 피벗값과 hi값을 교체한 후 해당 피벗을 기준으로 앞 뒤로 배열을 분할하여 정렬 진행
+    quickSort(arr, start, hi - 1);
+    quickSort(arr, hi + 1, end);
+
+  }
+
+  private static void swap(int[] arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
+}
+```
+
+<br/><br/>
 
 ## 탐색 알고리즘
 
