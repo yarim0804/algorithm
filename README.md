@@ -65,7 +65,7 @@ public static void bubbleSort(int[] arr) {
 배열에서 최솟값을 선택하고, 그 값을 첫 번째 원소와 교환하는 과정을 반복하는 알고리즘입니다.<br/>
 시간 복잡도: O(n^2)
 
-<img src="https://www.swtestacademy.com/wp-content/uploads/2021/11/selection-sort-Selection-Sort-1.drawio-1.png" width="50%" title="버블정렬"/>
+<img src="https://velog.velcdn.com/images/ajm0718/post/c56c2a99-4c3f-4471-b157-9f100f779053/image.png" width="50%" title="버블정렬"/>
 
 ```java
 public static void selectionSort(int[] arr) {
@@ -85,24 +85,7 @@ public static void selectionSort(int[] arr) {
 }
 ```
 
-### 삽입 정렬 (Insertion Sort)
-배열을 정렬된 부분과 정렬되지 않은 부분으로 나누고, 정렬되지 않은 부분의 원소를 정렬된 부분에 삽입하는 알고리즘
-시간 복잡도: O(n^2)
 
-```java
-public static void insertionSort(int[] arr) {
-    int n = arr.length;
-    for (int i = 1; i < n; i++) {
-        int key = arr[i];
-        int j = i - 1;
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        arr[j + 1] = key;
-    }
-}
-```
 
 ### 퀵 정렬(Quick Sort)
 퀵 소트는 분할 정복 기법을 통해 데이터를 정렬하는 알고리즘
@@ -110,7 +93,7 @@ public static void insertionSort(int[] arr) {
 시간 복잡도: O(nlogn)
 
 (1) 주어진 배열에서 임의의 한 원소를 고르고, 이를 피벗(Pivot) 이라 칭한다. (배열 한 가운데, 맨 앞 원소 등) <br/>
-(2) 피벗을 기준으로 피벗보다 값이 작은 원소들을 모두 모아놓은 배열 하나와, 피벗보다 값이 큰 원소들을 싸그리 모아놓은 배열 하나 → 이렇게 배열을 둘로 나눈다. 분할을 마친 뒤 피벗은 그 자리에서 더이상 움직이지 않는다. <br/>
+(2) 피벗을 기준으로 피벗보다 값이 작은 원소들을 모두 모아놓은 배열 하나와, 피벗보다 값이 큰 원소들을 모아놓은 배열 하나 → 이렇게 배열을 둘로 나눈다. 분할을 마친 뒤 피벗은 그 자리에서 더이상 움직이지 않는다. <br/>
 (3) 분할된 두 개의 배열에 대해 위 1, 2 과정을 재귀적으로 반복한다.<br/>
 
 단, 정렬이 되어 있는 경우 최악의 시나리오가 될 수 있음 (시간 복잡도 : O(n^2))
