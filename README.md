@@ -100,6 +100,8 @@ public static void selectionSort(int[] arr) {
 
 <img src="https://static.podo-dev.com/blogs/images/2019/07/10/origin/PAPKSS181224235509.PNG" width="70%" title="퀵 정렬"/>
 
+<a href="https://terms.naver.com/entry.naver?docId=2270444&cid=51173&categoryId=51173">퀵 정렬 링크</a>
+
 ```java
 public class QuickSort {
 
